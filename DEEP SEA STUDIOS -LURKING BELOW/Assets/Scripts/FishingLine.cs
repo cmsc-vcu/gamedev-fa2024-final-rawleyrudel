@@ -35,12 +35,11 @@ public class FishingLine : MonoBehaviour
 
     void HandleInput()
     {
-        // Toggle between dropping and returning when space bar is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isDropping)
             {
-                // If dropping, interrupt and start returning
+                // If dropping, start returning
                 isDropping = false;
                 isReturning = true;
             }
@@ -48,6 +47,12 @@ public class FishingLine : MonoBehaviour
             {
                 // If not already returning, start dropping
                 isDropping = true;
+
+                // Destroy the fish as soon as the line starts dropping
+                if (transform.GetComponentInChildren<Hook>().HasCaughtFish())
+                {
+                    transform.GetComponentInChildren<Hook>().ReleaseFish();
+                }
             }
         }
 
