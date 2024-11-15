@@ -7,10 +7,10 @@ This repo contains our work on the four-person game development projects for Gam
 
 ## Authors
 
-- John Leonard (jdleonard@vcu.edu)
-- Jason Bennett (jebennett@vcu.edu)
-- Skippy McBoatface (skippy@mcboatface.com)
-- MF Broom (mfbroom@rva.com)
+- Peter Nguyen
+- Daniel Nguyen (nguyend35@vcu.edu)
+- Rawley Rudel
+- Brooke Derdevanis
 
 ## Game Description
 
@@ -19,9 +19,9 @@ this game different from others?  What is the goal for playing?
 
 ## Important Links
 
-- Game URL: < ... >
-- GITHUB URL: < ... >
-- Gameplay Video URL: < ... >
+- Game URL: < https://play.unity.com/en/games/3e802309-eb5c-4b4f-9642-42a0ed3d273b/webgl-builds >
+- GITHUB URL: < https://github.com/cmsc-vcu/gamedev-fa2024-final-rawleyrudel >
+- Gameplay Video URL: < https://drive.google.com/file/d/1p56ADAFMTg6iF7bfzjIMVRUu0y3mK83s/view?usp=sharing >
 - Google Doc writeup: < ... >
 
 ## Files in the repository
