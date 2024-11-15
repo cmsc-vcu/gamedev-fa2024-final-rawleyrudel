@@ -1,8 +1,5 @@
 # Lurking Below - DeepSea Studios - Fall 2024
 
-Elevator Wipeout is a save-the-world game where the player does all they can to prevent bad guys from destroying a space elevator.  If the bad guys win, the earth
-is destroyed in a spectacular, slow-motion extravaganza.
-
 This repo contains our work on the four-person game development projects for GameDev.
 
 ## Authors
@@ -14,8 +11,8 @@ This repo contains our work on the four-person game development projects for Gam
 
 ## Game Description
 
-Provide more details of the game.  Discuss any unique game play features.  Why is
-this game different from others?  What is the goal for playing?
+This is a horror fishing game where the player catches fish to make money and uses money to buy upgrades. The Player needs to upgrade their equipment in order to go deeper, but deeper the fisherman goes to catch the fish the larger and scarier they become, potentially causing fatal consequences
+
 
 ## Important Links
 
