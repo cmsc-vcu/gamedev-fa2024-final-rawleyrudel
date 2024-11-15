@@ -11,7 +11,7 @@ This repo contains our work on the four-person game development projects for Gam
 
 ## Game Description
 
-This is a horror fishing game where the player catches fish to make money and uses money to buy upgrades. The Player needs to upgrade their equipment in order to go deeper, but deeper the fisherman goes to catch the fish the larger and scarier they become, potentially causing fatal consequences
+This is a horror fishing game where players catch fish to make money and use money to buy upgrades. The Player needs to upgrade their equipment to go deeper, but the deeper the fisherman goes to catch the fish the larger and scarier they become, potentially causing fatal consequences
 
 
 ## Important Links
