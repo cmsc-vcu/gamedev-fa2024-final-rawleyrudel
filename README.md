@@ -9,8 +9,8 @@ This repo contains our work on the four-person game development projects for Gam
 
 - Peter Nguyen
 - Daniel Nguyen (nguyend35@vcu.edu)
-- Rawley Rudel
-- Brooke Derdevanis
+- Rawley Rudel (rudelra@vcu.edu)
+- Brooke Derdevanis (derdevanisbp@vcu.edu)
 
 ## Game Description
 
@@ -23,7 +23,7 @@ this game different from others?  What is the goal for playing?
 - GITHUB URL: < https://github.com/cmsc-vcu/gamedev-fa2024-final-rawleyrudel >
 - Gameplay Video URL: < https://drive.google.com/file/d/1p56ADAFMTg6iF7bfzjIMVRUu0y3mK83s/view?usp=sharing >
 - Google Doc writeup: < ... >
-
+- Design Doc: https://docs.google.com/presentation/d/1MWoHy-k_pJS_OFVi1evkLt5ji9PyJER44A1L9CIb8eQ/edit#slide=id.g312b74b2eef_0_49
 ## Files in the repository
 
 ./unity/ - this folder contains the Unity game files associated with this game.
