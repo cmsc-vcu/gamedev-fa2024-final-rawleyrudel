@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class FishingLine : MonoBehaviour
 {
-    public float dropSpeed = 5f;
-    public float returnSpeed = 3f;
-    public float maxDepth = -5f;
-    public Transform reelPosition; // Position where the line should start (e.g., the rod tip)
+    public float dropSpeed = 5f; // Speed of the line when dropping
+    public float returnSpeed = 3f; // Speed of the line when returning
+    public float horizontalSpeed = 2f; // Configurable speed for left and right movement
+    public float maxDepth = -5f; // Maximum depth the line can reach
+    public Transform reelPosition; // Position where the line starts (e.g., rod tip)
     public LineRenderer lineRenderer; // Reference to the Line Renderer
-    [HideInInspector] public bool isReturning = false;
-    private bool isDropping = false;
     private Vector3 initialPosition; // Store the original position of the line
 
     void Start()
     {
-        // Ensure lineRenderer is assigned and initialized
+        // Ensure the lineRenderer is assigned and initialized
         if (lineRenderer == null)
         {
             lineRenderer = GetComponent<LineRenderer>();
         }
-        lineRenderer.positionCount = 2; // We only need two points: start and end
+        lineRenderer.positionCount = 2; // Line Renderer uses two points (start and end)
 
         // Store the initial position
         initialPosition = transform.position;
@@ -35,55 +34,36 @@ public class FishingLine : MonoBehaviour
 
     void HandleInput()
     {
-         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isDropping)
-            {
-                // If dropping, start returning
-                isDropping = false;
-                isReturning = true;
-            }
-            else if (!isReturning)
-            {
-                // If not already returning, start dropping
-                isDropping = true;
-
-                // Destroy the fish as soon as the line starts dropping
-                if (transform.GetComponentInChildren<Hook>().HasCaughtFish())
-                {
-                    transform.GetComponentInChildren<Hook>().ReleaseFish();
-                }
-            }
-        }
-
-        // Automatically start returning if max depth is reached
-        if (transform.position.y <= maxDepth && isDropping)
-        {
-            isDropping = false;
-            isReturning = true;
-        }
+        // No specific input handling is required here since movement is driven by key states
     }
 
     void MoveLine()
     {
-        if (isDropping)
+        if (Input.GetKey(KeyCode.Space))
         {
-            // Move straight down
-            transform.position += Vector3.down * dropSpeed * Time.deltaTime;
+            // Move straight down while holding the space bar
+            if (transform.position.y > maxDepth)
+            {
+                transform.position += Vector3.down * dropSpeed * Time.deltaTime;
+            }
         }
-        else if (isReturning)
+        else
         {
-            // Move back towards the initial position
+            // Move back towards the initial position when the space bar is released
             transform.position = Vector3.MoveTowards(transform.position, initialPosition, returnSpeed * Time.deltaTime);
 
-            // Allow horizontal movement with arrow keys while moving up
+            // Allow configurable horizontal movement with arrow keys while moving up
             float horizontal = Input.GetAxis("Horizontal");
-            transform.position += Vector3.right * horizontal * returnSpeed * Time.deltaTime;
+            transform.position += Vector3.right * horizontal * horizontalSpeed * Time.deltaTime;
 
-            // Stop returning once it reaches the initial position
+            // Release the fish if the line has returned to the initial position
             if (transform.position == initialPosition)
             {
-                isReturning = false;
+                Hook hook = GetComponentInChildren<Hook>();
+                if (hook != null)
+                {
+                    hook.ReleaseFish(); // Ensure the fish is removed when the line reaches the surface
+                }
             }
         }
     }

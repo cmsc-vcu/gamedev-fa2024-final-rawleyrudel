@@ -1572,11 +1572,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropSpeed: 5
-  returnSpeed: 2
-  maxDepth: -10
+  returnSpeed: 4
+  horizontalSpeed: 4
+  maxDepth: -14
   reelPosition: {fileID: 809351079}
   lineRenderer: {fileID: 1687696639}
-  isReturning: 0
 --- !u!120 &1687696639
 LineRenderer:
   serializedVersion: 2

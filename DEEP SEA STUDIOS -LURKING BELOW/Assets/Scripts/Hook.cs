@@ -6,11 +6,15 @@ public class Hook : MonoBehaviour
 {
     private FishingLine fishingLine;
     private GameObject caughtFish; // Reference to the caught fish
+    private FishTallyManager fishTallyManager; // Reference to the FishTallyManager
 
     void Start()
     {
         // Reference to the FishingLine script on the parent object
         fishingLine = transform.parent.GetComponent<FishingLine>();
+
+        // Find and reference the FishTallyManager in the scene
+        fishTallyManager = FindObjectOfType<FishTallyManager>();
     }
 
     void Update()
@@ -24,11 +28,24 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the hook is in "collecting" mode (i.e., moving up) and if it collides with a fish
-        if (fishingLine.isReturning && collision.CompareTag("Fish") && caughtFish == null)
+        // Check if the hook is ascending (space bar is released) and if it collides with a fish
+        if (!Input.GetKey(KeyCode.Space) && collision.CompareTag("Fish") && caughtFish == null)
         {
             // Attach the fish to the hook
             caughtFish = collision.gameObject;
+
+            // Stop the fish's AI behavior
+            if (caughtFish.TryGetComponent<FishAI>(out FishAI fishAI))
+            {
+                Destroy(fishAI); // Destroy the FishAI component to stop its movement
+            }
+
+            // Notify the FishTallyManager to update the tally
+            if (fishTallyManager != null)
+            {
+                fishTallyManager.AddFish();
+            }
+
             Debug.Log("Fish collected!");
         }
     }
@@ -38,7 +55,7 @@ public class Hook : MonoBehaviour
         // Release the caught fish (if any)
         if (caughtFish != null)
         {
-            // Destroy the caught fish from the scene
+            // Destroy the caught fish GameObject
             Destroy(caughtFish);
 
             // Clear the reference

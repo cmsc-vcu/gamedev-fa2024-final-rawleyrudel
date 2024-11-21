@@ -8,6 +8,7 @@ public class FishAI : MonoBehaviour
     public float moveDistance = 3f; // Distance fish moves before turning around
     private Vector3 startPosition;
     private bool movingRight = true; // Fish starts by moving right
+    private bool isActive = true; // Whether the fish is active
 
     void Start()
     {
@@ -17,7 +18,10 @@ public class FishAI : MonoBehaviour
 
     void Update()
     {
-        MoveFish();
+        if (isActive)
+        {
+            MoveFish();
+        }
     }
 
     void MoveFish()
@@ -34,5 +38,11 @@ public class FishAI : MonoBehaviour
             movingRight = !movingRight; // Flip the direction
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); // Flip the sprite
         }
+    }
+
+    public void Deactivate()
+    {
+        // Stop the fish's movement
+        isActive = false;
     }
 }
