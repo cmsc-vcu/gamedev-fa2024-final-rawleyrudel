@@ -18,7 +18,7 @@ This is a horror fishing game where players catch fish to make money and use mon
 
 - Game URL: < https://play.unity.com/en/games/3e802309-eb5c-4b4f-9642-42a0ed3d273b/lurking-below >
 - GITHUB URL: < https://github.com/cmsc-vcu/gamedev-fa2024-final-rawleyrudel >
-- Gameplay Video URL: < https://drive.google.com/file/d/1BxuyroEEjGdNXgwH0RDBzOpqqSA3c7Z5/view?usp=sharing >
+- Gameplay Video URL: < https://youtu.be/j4aBN6mLaPs >
 - Google Doc writeup: < ... >
 - Design Doc: https://docs.google.com/presentation/d/1MWoHy-k_pJS_OFVi1evkLt5ji9PyJER44A1L9CIb8eQ/edit#slide=id.g312b74b2eef_0_49
 ## Files in the repository
