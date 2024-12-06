@@ -33,4 +33,5 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("GameOverCanvas not assigned in GameManager.");
         }
     }
+
 }
